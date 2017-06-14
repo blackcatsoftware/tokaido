@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <script async type="text/javascript">
+            var CHARACTERS =
+            [
+                // Base game
+                "Hiroshige the Artist",
+                "Chuubei the Messenger",
+                "Kinko the Ronin",
+                "Yoshiyasu the Functionary",
+                "Satsuki the Orphan",
+                "Mitsukuni the Old Man",
+                "Sasayakko the Geisha",
+                "Hirotada the Priest",
+                "Umegai the Street Entertainer",
+                "Zen-Emon the Merchant",
+                
+                // Special Characters
+                "Eriku the Game Player",
+                "Antione the Game Designer",
+                "Naiade the Game Artist",
+                
+                // Crossroads
+                "Jirocho the Yakuza",
+                "Daigoro the Kid",
+                "Nampo the Gourmet",
+                "Gotozaemon the Souvenir Seller",
+                "Miyataka the Superstitious Woman",
+                "Kita the Old Woman",
+                
+                // Matsuri
+                "Kushinada the World Traveler",
+                "Mutsumi the Brute",
+                "Takeru the Counselor",
+                "Rakuren the Collector",
+                "Kamui the Vagabond",
+                "Mari the Poet",
+                "Yashima the Noble",
+                "Kidzuna the Cook",
+                "Chihaya the Bather",
+                "Iyasaka the Manual Worker",
+                "Marihito the Writer",
+                "Suseri the Erudite",
+                "Ayumu the Walker",
+                "Musubi the Rogue",
+                "Misaki the Disciple",
+                "Titia the Dutch Tourist"
+            ];
+            
+            function selectRandomCharacter()
+            {
+                var index = Math.floor(CHARACTERS.length * Math.random());
+                console.log(index);
+                document.getElementById("character_container").innerHTML = CHARACTERS[index];
+            }
+            
+            function selectRandomCharacters(event)
+            {
+                console.log("Random characters: " + Object.keys(event));
+            }
+            
+            var ACTIONS = ["Shopping", "Tithing", "Greeting", "Painting", "Bathing", "Working"];
+            function selectRandomAction()
+            {
+                var index = Math.floor(ACTIONS.length * Math.random());
+                console.log(index);
+                document.getElementById("action_container").innerHTML = ACTIONS[index];
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Character Selection</h1>
+        
+        <h3>Select the Number of Players</h3>
+        <form action="" onchange="selectRandomCharacters(event)">
+            <select>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </form>
+        
+        <div id="character_container"></div>
+        <!-- <input type="button" value="Select Random Character" id="player_btn" onclick="selectRandomCharacter()"/> -->
+        
+        <!-- Drunken Samurai
+        <h1>Action Selection</h1>
+        <div id="action_container">
+        &lt;Press the Button&gt;
+        </div>
+        <input type="button" value="Select Random Action" id="player_btn" onclick="selectRandomAction()"/>
+        -->
+    </body>
+</html>
