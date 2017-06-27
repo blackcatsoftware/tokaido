@@ -22,6 +22,9 @@
         .coin .coin-x {
             vertical-align: text-top;
         }
+        table.character-heading tr td:last-child {
+            padding-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -35,17 +38,19 @@
             <div class="col-sm-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-7">
-                                <h2>Name<br/><small>the Occupation</small></h2>
-                            </div>
-                            <div class="col-xs-5">
-                                <div class="coin">
-                                    <img src="http://via.placeholder.com/50x50" class="img-circle" alt="Coins">
-                                    <div><strong><span class="coin-x">&times;</span>6</strong></div>
-                                </div>
-                            </div>
-                        </div>
+                        <table class="character-heading">
+                            <tr>
+                                <td colspan="2">
+                                    <h2>Name<br/><small>the Occupation</small></h2>
+                                </td>
+                                <td colspan="1">
+                                    <div class="coin">
+                                        <img src="http://via.placeholder.com/50x50" class="img-circle" alt="Coins">
+                                        <div><strong><span class="coin-x">&times;</span>6</strong></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="panel-body">
                         <img src="http://via.placeholder.com/200x200" class="img-rounded" alt="Name the Occupation">
