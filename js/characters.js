@@ -146,6 +146,122 @@ var Characters = (function()
             starting_coins: 4,
             version: "crossroads"
         },
+
+        // Matsuri
+        {
+            name: "Kushinada",
+            occupation: "world traveler",
+            ability: "At the beginning of the game, all the other Travelers give 1 coin each to Kushinada. During the game, at any time, Kushinada can secretly look at her opponents’ Calligraphy and Amulet cards.",
+            starting_coins: 4,
+            version: "matsuri"
+        },
+        {
+            name: "Mutsumi",
+            occupation: "brute",
+            ability: "At the first 4 Inns, Mutsumi can leave the Inn first, regardless of the order in which he arrived at the Inn.",
+            starting_coins: 7,
+            version: "matsuri"
+        },
+        {
+            name: "Takeru",
+            occupation: "counselor",
+            ability: "Every time a Traveler (him or another) stops at an Encounter space, Takeru takes 1 coin from the bank.",
+            starting_coins: 4,
+            version: "matsuri"
+        },
+        {
+            name: "Rakuren",
+            occupation: "collector",
+            ability: "When stopping at a Shop space, Rakuren can choose to randomly draw 4 Souvenir cards AND 1 Legendary Object card, instead of the usual Shop’s actions. He can then buy one or several of these cards at their indicated costs.",
+            starting_coins: 5,
+            version: "matsuri"
+        },
+        {
+            name: "Kamui",
+            occupation: "vagabond",
+            ability: "When stopping at the Intermediate Inns and at the last Inn, Kamui scores 3 points if he doesn’t buy a Meal card.",
+            ability_note: "These 3 points can be combined with the “Fasting” Calligraphy points.",
+            starting_coins: 3,
+            version: "matsuri"
+        },
+        {
+            name: "Mari",
+            occupation: "poet",
+            ability: "When stopping at a Temple space, Mari scores 2 Journey points (instead of 1) for each coin she donates to the Temple. If she decides to buy an Amulet, Mari can take it for free.",
+            starting_coins: 4,
+            version: "matsuri"
+        },
+        {
+            name: "Yashima",
+            occupation: "noble",
+            ability: "At the intermediate Inns, Yashima receives a free and random Amulet card.",
+            ability_note: "If there are no Amulet cards remaining in the stack, Yashima can no longer benefit from her ability.",
+            starting_coins: 4,
+            version: "matsuri"
+        },
+        {
+            name: "Kidzuna",
+            occupation: "cook",
+            ability: "When stopping at the intermediate Inns, Kidzuna can buy another Meal IN ADDITION to her usual Meal. First, she reveals the first card of the Meal stack and can buy it at the indicated cost. She scores the corresponding Journey points. Kidzuna then proceeds to purchase her main Meal according to the usual rules.",
+            starting_coins: 3,
+            version: "matsuri"
+        },
+        {
+            name: "Chihaya",
+            occupation: "bather",
+            ability: "When stopping at the intermediate Inns, Chihaya receives a Hot Spring card randomly drawn from the stack.",
+            starting_coins: 3,
+            version: "matsuri"
+        },
+        {
+            name: "Iyasaka",
+            occupation: "manual worker",
+            ability: "When stopping at a Farm space, Iyasaka receives 1 additional coin if he chooses to take 3 coins from the bank OR Iyasaka can re-roll the Fortune die if he chooses to try his luck in the Gaming Room (the second result must be used, even if it is worse than the first one).",
+            starting_coins: 5,
+            version: "matsuri"
+        },
+        {
+            name: "Marihito",
+            occupation: "writer",
+            ability: "At the end of the game, Marihito can double one of the Calligraphy cards of his collection.",
+            starting_coins: 5,
+            version: "matsuri"
+        },
+        {
+            name: "Suseri",
+            occupation: "erudite",
+            ability: "At the end of the game, Suseri scores 1 point for each different type of card in her collection. The different types of cards are as follows: Hot Spring, Bathhouse, Souvenir, Legendary Object, Encounter, Calligraphy, Amulet, Meal, Sea Panorama, Mountain Panorama, Rice Paddy Panorama, Cherry Tree.",
+            starting_coins: 3,
+            version: "matsuri"
+        },
+        {
+            name: "Ayumu",
+            occupation: "walker",
+            ability: "Meal cards only cost Ayumu 1 coin, regardless of their normal costs. In addition, when at a Shop space, the Souvenirs of the “Small object” type cost him nothing.",
+            starting_coins: 5,
+            version: "matsuri"
+        },
+        {
+            name: "Musubi",
+            occupation: "rogue",
+            ability: "When stopping at the intermediate Inns, Musubi can take 1 coin from each of his two neighboring Travelers (the ones who arrived immediately before and after him). If an affected Traveler has no coins in his possession, Musubi takes 1 coin from the bank instead. Similarly, if Musubi arrived first or last at the Inn (and has only one neighbor), he takes 1 coin from the neighboring Traveler and 1 coin from the bank.",
+            starting_coins: 6,
+            version: "matsuri"
+        },
+        {
+            name: "Misaki",
+            occupation: "disciple",
+            ability: "Every time a Traveler (him or another) stops at a Temple space, Misaki takes 1 coin from the bank.",
+            starting_coins: 4,
+            version: "matsuri"
+        },
+        {
+            name: "Titia",
+            occupation: "dutch tourist",
+            ability: "Titia buys Souvenirs of the “Art” type and Legendary Objects for 1 coin less than normal. Some cards will therefore be free for Titia",
+            starting_coins: 6,
+            version: "matsuri"
+        },
     ];
 
     for (var idx = 0; idx < characters.length; idx++)
@@ -159,25 +275,6 @@ var Characters = (function()
     "Eriku the Game Player",
     "Antione the Game Designer",
     "Naiade the Game Artist",
-
-
-    // Matsuri
-    "Kushinada the World Traveler",
-    "Mutsumi the Brute",
-    "Takeru the Counselor",
-    "Rakuren the Collector",
-    "Kamui the Vagabond",
-    "Mari the Poet",
-    "Yashima the Noble",
-    "Kidzuna the Cook",
-    "Chihaya the Bather",
-    "Iyasaka the Manual Worker",
-    "Marihito the Writer",
-    "Suseri the Erudite",
-    "Ayumu the Walker",
-    "Musubi the Rogue",
-    "Misaki the Disciple",
-    "Titia the Dutch Tourist"
 
 
     return ret;
