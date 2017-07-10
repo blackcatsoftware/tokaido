@@ -1,6 +1,21 @@
 <html>
     <head>
-        <script async type="text/javascript">
+        <title>Tokaido Companion App</title>
+
+        <!-- Bootstrap -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Vue.js -->
+        <script src="https://unpkg.com/vue"></script>
+
+        <!-- Our Stuff -->
+        <link rel="stylesheet" href="css/css.css" />
+
+        <script type="text/javascript">
             var CHARACTERS =
             [
                 // Base game
@@ -69,27 +84,238 @@
         </script>
     </head>
     <body>
-        <h1>Character Selection</h1>
-        
-        <h3>Select the Number of Players</h3>
-        <form action="" onchange="selectRandomCharacters(event)">
-            <select>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </form>
-        
-        <div id="character_container"></div>
-        <!-- <input type="button" value="Select Random Character" id="player_btn" onclick="selectRandomCharacter()"/> -->
-        
-        <!-- Drunken Samurai
-        <h1>Action Selection</h1>
-        <div id="action_container">
-        &lt;Press the Button&gt;
+        <div class="container">
+            <h1>Game Setup</h1>
+
+            <div>
+                <form>
+                    <div class="form-group">
+                        <strong>Select Number of Players</strong>
+                        <br>
+                        <label class="radio-inline">
+                            <input type="radio" name="num-players", id="num-players-2" value="2"> 2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="num-players", id="num-players-3" value="3"> 3
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="num-players", id="num-players-4" value="4"> 4
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="num-players", id="num-players-5" value="5"> 5
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <strong>Select Character Sets</strong>
+                        <div class="checkbox disabled">
+                            <label>
+                                <input type="checkbox" value="" checked disabled>
+                                Base Game
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">
+                                Crossroads
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">
+                                Matsuri
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">
+                                Special Edition Characters
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <h1>Select a Character</h1>
+
+            <h2>Player 1</h2>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="center-block">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="pull-left">
+                                    <strong>
+                                        <span class="character-name">Name</span>
+                                        <br>
+                                        <span class="character-occupation">the Occupation</span>
+                                    </strong>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="coin">
+                                        <img src="http://via.placeholder.com/35x35" class="img-circle" alt="Coins">
+                                        <div><strong><span class="coin-x">&times;</span>6</strong></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-body">
+                                <img src="http://via.placeholder.com/188x200" class="img-rounded center-block" alt="Name the Occupation">
+                            </div>
+                            <div class="panel-footer">
+                                <img src="http://via.placeholder.com/188x65" class="img-rounded center-block" alt="Ability Description">
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+                <div class="col-sm-4">
+                    <div class="center-block">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="pull-left">
+                                    <strong>
+                                        <span class="character-name">Name</span>
+                                        <br>
+                                        <span class="character-occupation">the Occupation</span>
+                                    </strong>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="coin">
+                                        <img src="http://via.placeholder.com/35x35" class="img-circle" alt="Coins">
+                                        <div><strong><span class="coin-x">&times;</span>6</strong></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-body">
+                                <img src="http://via.placeholder.com/188x200" class="img-rounded center-block" alt="Name the Occupation">
+                            </div>
+                            <div class="panel-footer">
+                                <img src="http://via.placeholder.com/188x65" class="img-rounded center-block" alt="Ability Description">
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+                <div class="col-sm-4">
+                    <div class="center-block">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="pull-left">
+                                    <strong>
+                                        <span class="character-name">Name</span>
+                                        <br>
+                                        <span class="character-occupation">the Occupation</span>
+                                    </strong>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="coin">
+                                        <img src="http://via.placeholder.com/35x35" class="img-circle" alt="Coins">
+                                        <div><strong><span class="coin-x">&times;</span>6</strong></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-body">
+                                <img src="http://via.placeholder.com/188x200" class="img-rounded center-block" alt="Name the Occupation">
+                            </div>
+                            <div class="panel-footer">
+                                <img src="http://via.placeholder.com/188x65" class="img-rounded center-block" alt="Ability Description">
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+            </div> <!-- row -->
+
+            <h2>Player 2</h2>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="center-block">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="pull-left">
+                                    <strong>
+                                        <span class="character-name">Name</span>
+                                        <br>
+                                        <span class="character-occupation">the Occupation</span>
+                                    </strong>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="coin">
+                                        <img src="http://via.placeholder.com/35x35" class="img-circle" alt="Coins">
+                                        <div><strong><span class="coin-x">&times;</span>6</strong></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-body">
+                                <img src="http://via.placeholder.com/188x200" class="img-rounded center-block" alt="Name the Occupation">
+                            </div>
+                            <div class="panel-footer">
+                                <img src="http://via.placeholder.com/188x65" class="img-rounded center-block" alt="Ability Description">
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+                <div class="col-sm-4">
+                    <div class="center-block">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="pull-left">
+                                    <strong>
+                                        <span class="character-name">Name</span>
+                                        <br>
+                                        <span class="character-occupation">the Occupation</span>
+                                    </strong>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="coin">
+                                        <img src="http://via.placeholder.com/35x35" class="img-circle" alt="Coins">
+                                        <div><strong><span class="coin-x">&times;</span>6</strong></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-body">
+                                <img src="http://via.placeholder.com/188x200" class="img-rounded center-block" alt="Name the Occupation">
+                            </div>
+                            <div class="panel-footer">
+                                <img src="http://via.placeholder.com/188x65" class="img-rounded center-block" alt="Ability Description">
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+                <div class="col-sm-4">
+                    <div class="center-block">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="pull-left">
+                                    <strong>
+                                        <span class="character-name">Name</span>
+                                        <br>
+                                        <span class="character-occupation">the Occupation</span>
+                                    </strong>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="coin">
+                                        <img src="http://via.placeholder.com/35x35" class="img-circle" alt="Coins">
+                                        <div><strong><span class="coin-x">&times;</span>6</strong></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-body">
+                                <img src="http://via.placeholder.com/188x200" class="img-rounded center-block" alt="Name the Occupation">
+                            </div>
+                            <div class="panel-footer">
+                                <img src="http://via.placeholder.com/188x65" class="img-rounded center-block" alt="Ability Description">
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- col -->
+            </div> <!-- row -->
+
         </div>
-        <input type="button" value="Select Random Action" id="player_btn" onclick="selectRandomAction()"/>
-        -->
     </body>
 </html>

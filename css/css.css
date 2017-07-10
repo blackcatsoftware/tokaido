@@ -1,0 +1,21 @@
+/* Character "card" component */
+.character-name {
+    font-size: 28px;
+}
+.character-occupation {
+    color: #777;
+}
+.coin {
+    position: relative;
+    width: 100%;
+    padding: 2px;
+}
+.coin div {
+    position: absolute;
+    top: 21px;
+    left: 21px;
+    width: 100%;
+}
+.coin .coin-x {
+    vertical-align: text-top;
+}
