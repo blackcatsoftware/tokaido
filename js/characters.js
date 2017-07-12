@@ -1,3 +1,15 @@
+var CharacterSets = (function()
+{
+    return
+    [
+        "base",
+        "crossroads",
+        "matsuri",
+        "special"
+    ];
+}());
+
+
 var Characters = (function() 
 {
     // Returned object
@@ -12,17 +24,6 @@ var Characters = (function()
     }
 
     /***  Public Methods  ***/
-
-
-    /***  Execute Setup  ***/
-    
-    var GAME_VERSIONS =
-    [
-        "base",
-        "crossroads",
-        "matsuri",
-        "special"
-    ];
 
     // Master list of all characters. Init via
     // an array just for convenience of representation.
@@ -258,24 +259,40 @@ var Characters = (function()
         {
             name: "Titia",
             occupation: "dutch tourist",
-            ability: "Titia buys Souvenirs of the “Art” type and Legendary Objects for 1 coin less than normal. Some cards will therefore be free for Titia",
+            ability: "Titia buys Souvenirs of the “Art” type and Legendary Objects for 1 coin less than normal. Some cards will therefore be free for Titia.",
             starting_coins: 6,
             version: "matsuri"
         },
+
+        // Special Edition
+        {
+            name: "Antoine",
+            occupation: "game designer",
+            ability: "Antoine automatically wins all ties involving him.",
+            ability_note: "e.g. Donations to the Temple, Achievements, and even the final score of the game"
+            starting_coins: 8,
+            version: "special"
+        },
+        {
+            name: "Antoine",
+            occupation: "game player",
+            ability: "At the start of the game and before playing his first move, Eriku can draw the first Meal card from the pile and buy it at the given price to add it to his collection. He then gets 6 points as for any other Meal card. This action is by no means mandatory. At the following Inns, Eriku can also draw and look at the first Meal card from the pile. He can eventually decide to buy it at the given price instead of buying one of those already available. The Meal card that Eriku draws and does not buy is placed under the pile.",
+            starting_coins: 5,
+            version: "special"
+        },
+        {
+            name: "Naiade",
+            occupation: "game artist",
+            ability: "Naiade must take the Sea, Mountain, and Rice Paddy Panorama section in reverse order (5, 4, 3, 2, 1).",
+            starting_coins: 5,
+            version: "special"
+        }
     ];
 
     for (var idx = 0; idx < characters.length; idx++)
     {
         add(characters[idx]);
     }
-
-
-
-    // Special Characters
-    "Eriku the Game Player",
-    "Antione the Game Designer",
-    "Naiade the Game Artist",
-
 
     return ret;
 }());
