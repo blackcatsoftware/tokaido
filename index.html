@@ -14,54 +14,9 @@
 
         <!-- Our Stuff -->
         <link rel="stylesheet" href="css/css.css" />
+        <script src="js/characters.js" />
 
         <script type="text/javascript">
-            var CHARACTERS =
-            [
-                // Base game
-                "Hiroshige the Artist",
-                "Chuubei the Messenger",
-                "Kinko the Ronin",
-                "Yoshiyasu the Functionary",
-                "Satsuki the Orphan",
-                "Mitsukuni the Old Man",
-                "Sasayakko the Geisha",
-                "Hirotada the Priest",
-                "Umegai the Street Entertainer",
-                "Zen-Emon the Merchant",
-                
-                // Special Characters
-                "Eriku the Game Player",
-                "Antione the Game Designer",
-                "Naiade the Game Artist",
-                
-                // Crossroads
-                "Jirocho the Yakuza",
-                "Daigoro the Kid",
-                "Nampo the Gourmet",
-                "Gotozaemon the Souvenir Seller",
-                "Miyataka the Superstitious Woman",
-                "Kita the Old Woman",
-                
-                // Matsuri
-                "Kushinada the World Traveler",
-                "Mutsumi the Brute",
-                "Takeru the Counselor",
-                "Rakuren the Collector",
-                "Kamui the Vagabond",
-                "Mari the Poet",
-                "Yashima the Noble",
-                "Kidzuna the Cook",
-                "Chihaya the Bather",
-                "Iyasaka the Manual Worker",
-                "Marihito the Writer",
-                "Suseri the Erudite",
-                "Ayumu the Walker",
-                "Musubi the Rogue",
-                "Misaki the Disciple",
-                "Titia the Dutch Tourist"
-            ];
-            
             function selectRandomCharacter()
             {
                 var index = Math.floor(CHARACTERS.length * Math.random());
@@ -84,43 +39,16 @@
                     <div class="form-group">
                         <strong>Select Number of Players</strong>
                         <br>
-                        <label class="radio-inline">
-                            <input type="radio" value="2" v-model="num_players"> 2
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" value="3" v-model="num_players"> 3
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" value="4" v-model="num_players"> 4
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" value="5" v-model="num_players"> 5
+                        <label class="radio-inline" v-for="num in possible_players">
+                            <input type="radio" :value="num" v-model.number="num_players"> {{ num }}
                         </label>
                     </div>
                     <div class="form-group">
                         <strong>Select Character Sets</strong>
-                        <div class="checkbox">
+                        <div class="checkbox" v-for="charset in all_charsets">
                             <label>
-                                <input type="checkbox" value="base" v-model="charsets">
-                                Base Game
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="crossroads" v-model="charsets">
-                                Crossroads
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="matsuri" v-model="charsets">
-                                Matsuri
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="special" v-model="charsets">
-                                Special Edition Characters
+                                <input type="checkbox" :value="charset.code" :checked="charset.default" v-model="charsets">
+                                {{ charset.desc }}
                             </label>
                         </div>
                     </div>
@@ -138,7 +66,10 @@
                     data :
                     {
                         num_players: 2,
-                        charsets: ['base']
+                        possible_players: [2, 3, 4, 5],
+                        
+                        charsets: ['base'],
+                        all_charsets: CharacterSets,
                     }
                 });
             </script>
